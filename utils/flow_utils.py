@@ -202,3 +202,19 @@ def make_color_wheel():
 	colorwheel[col:col + MR, 0] = 255
 
 	return colorwheel
+
+"""from os.path import join, exists
+from glob import glob
+import flowiz as fz
+
+
+root = "/home/gaurav/flownet2-pytorch-1.0.1-with-CUDA-10/images/flownet2c/inference/"
+assert exists(root)
+images = sorted(glob(join(root, "**", "*.flo")))
+print(len(images))
+one = images[180]
+img = fz.convert_from_file(one)
+plt.imshow(img)
+plt.savefig("./images/example_flownet2c_flowiz.jpg")"""
+
+#visulize_flow_file(one, save_dir="./images/")

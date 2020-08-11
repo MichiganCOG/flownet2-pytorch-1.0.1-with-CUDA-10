@@ -326,13 +326,16 @@ class ImagesFromFolder(data.Dataset):
     self.render_size = args.inference_size
     self.replicates = replicates
 
-    images = sorted( glob( join(root, '*.' + iext) ) )
+    images = sorted( glob( join(root, '**', '*.' + iext) ) )
+
+    assert len(images) > 0, 'wrong dir'
     self.image_list = []
     for i in range(len(images)-1):
         im1 = images[i]
         im2 = images[i+1]
         self.image_list += [ [ im1, im2 ] ]
-
+    #print(self.image_list)
+    #assert 1 == 0
     self.size = len(self.image_list)
 
     self.frame_size = frame_utils.read_gen(self.image_list[0][0]).shape
@@ -386,6 +389,15 @@ class ImageFolderWithPaths(torchvision.datasets.ImageFolder):
     def __len__(self):
         return super(ImageFolderWithPaths, self).__len__() - 1
 
+"""import argparse
+import numpy as np
+
+parser = argparse.ArgumentParser()
+args = parser.parse_args()
+args.inference_size = [1080, 1920]
+args.crop_size = [384, 512]
+args.effective_batch_size = 1
+
 # Example Usage for VVT_ImageFolderWithPaths for train frames
 data_dir = "/data_hdd/fw_gan_vvt/train/train_frames"
 transforms = torchvision.transforms.Compose([
@@ -393,16 +405,21 @@ transforms = torchvision.transforms.Compose([
     torchvision.transforms.Normalize([0.5], [0.5])
 ])
 dataset = ImageFolderWithPaths(data_dir, transform=transforms) # our custom dataset
+dataset = ImagesFromFolder(args, False, root=data_dir)
 dataloader = torch.utils.data.DataLoader(dataset)
 
+dataloader = iter(dataloader)
+batch = next(dataloader)"""
+
+
 # iterate over data
-inputs, labels, paths = [], [], []
+"""inputs, labels, paths = [], [], []
 for input, label, path in dataloader:
     # use the above variables freely
     print(input, label, path)
     image1, image2 = input
     label1, label2 = label
-    path1, path2 = path
+    path1, path2 = path"""
 '''
 import argparse
 import sys, os

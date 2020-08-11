@@ -8,3 +8,10 @@ _ext/
 build/
 dist/
 *.egg_info
+flownet2-docker/
+networks/correlation_package/*
+__pycache__/*
+images/*
+utils/images/*
+utils/output/*
+utils/IMG*
