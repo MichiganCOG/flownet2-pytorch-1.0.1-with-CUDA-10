@@ -1,5 +1,26 @@
 # flownet2-pytorch 
 
+## Setup
+
+```
+# Install dependencies
+conda create -p env
+conda activate ./env
+conda env update -f environment.yml
+module load cuda/10.0  # Only needed for compilation
+./install.sh
+
+# Manually download FlowNet2 weights (https://drive.google.com/file/d/1hF8vS6YeHkx3j2pfCeQqqZGwA_PJq_Da/view?usp=sharing) into `weights` folder
+```
+
+## New inference
+
+```
+python -m src.main2
+```
+
+
+
 Pytorch implementation of [FlowNet 2.0: Evolution of Optical Flow Estimation with Deep Networks](https://arxiv.org/abs/1612.01925). 
 
 Multiple GPU training is supported, and the code provides examples for training or inference on [MPI-Sintel](http://sintel.is.tue.mpg.de/) clean and final datasets. The same commands can be used for training or inference with other datasets. See below for more detail.

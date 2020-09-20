@@ -1,12 +1,5 @@
-*.pyc
-.torch
-_ext
-*.o
-work
-work/*
-_ext/
+*.egg-info/
+__pycache__/
 build/
 dist/
-*.egg_info
-*.tar
-networks/*_package/*
+env/

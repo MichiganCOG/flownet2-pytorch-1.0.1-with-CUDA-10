@@ -1,0 +1,15 @@
+channels:
+  - pytorch
+  - conda-forge
+  - anaconda
+dependencies:
+  - pytorch=1.0.1
+  - torchvision=0.2.2
+  - cudatoolkit=10.0
+  - tensorboardX
+  - colorama
+  - tqdm
+  - setproctitle
+  - pytz
+  - scipy=1.2.1
+  - matplotlib
