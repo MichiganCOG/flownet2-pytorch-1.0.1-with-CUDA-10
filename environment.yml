@@ -13,3 +13,4 @@ dependencies:
   - pytz
   - scipy=1.2.1
   - matplotlib
+  - opencv=4.1.0
